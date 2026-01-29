@@ -8,7 +8,13 @@ import SaveJobButton from "@/components/SaveJobButton";
 import { Job } from "@/lib/types";
 import { getCompanyLogo } from "@/lib/companyLogo";
 
-export default function JobCard({ job }: { job: Job }) {
+interface JobCardProps {
+  job: Job;
+  showRemove?: boolean;
+  onRemove?: (id: number) => void;
+}
+
+export default function JobCard({ job, showRemove, onRemove }: JobCardProps) {
   return (
     <Card
       className="group rounded-xl bg-white p-6 border
@@ -36,7 +42,6 @@ export default function JobCard({ job }: { job: Job }) {
     {job.company_name?.charAt(0)}
   </span>
 </div>
-
 
         {/* TITLE */}
         <div className="flex-1">
@@ -69,8 +74,17 @@ export default function JobCard({ job }: { job: Job }) {
             View
           </Link>
 
-          {/* ✅ SAVE BUTTON */}
-          <SaveJobButton job={job} />
+          {/* ✅ REMOVE BUTTON (Saved Jobs Page) */}
+          {showRemove && onRemove ? (
+            <button
+              onClick={() => onRemove(job.id)}
+              className="text-sm font-medium text-red-600 hover:text-red-700 hover:underline"
+            >
+              Remove
+            </button>
+          ) : (
+            <SaveJobButton job={job} />
+          )}
         </div>
       </div>
     </Card>
