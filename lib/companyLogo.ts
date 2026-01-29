@@ -1,9 +1,9 @@
-export function getCompanyLogo(companyName: string) {
-  if (!companyName) return "";
+export function getCompanyLogo(company: string) {
+  if (!company) return "";
 
-  const cleanName = companyName
+  const domain = company
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
 
-  return `https://logo.clearbit.com/${cleanName}.com`;
+  return `https://logo.clearbit.com/${domain}.com`;
 }
