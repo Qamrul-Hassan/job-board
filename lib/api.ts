@@ -5,6 +5,11 @@ const api = axios.create({
 });
 
 export async function getJobs() {
-  const res = await api.get("/remote-jobs");
-  return res.data;
+  try {
+    const res = await api.get("/remote-jobs");
+    return res.data;
+  } catch (error) {
+    console.error("Failed to fetch jobs", error);
+    return { jobs: [] };
+  }
 }
