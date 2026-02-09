@@ -1,4 +1,5 @@
-{
+git branch -M main
+git push -u origin main{
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
