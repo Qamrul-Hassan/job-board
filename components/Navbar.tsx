@@ -72,7 +72,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="rounded-xl border border-transparent px-4 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/25 hover:text-slate-900 hover:shadow-[0_8px_18px_rgba(38,98,216,0.2)]"
+                className="rounded-xl border border-transparent px-4 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/25 hover:text-slate-900 hover:shadow-[0_8px_18px_rgba(38,98,216,0.2)] active:translate-y-0 active:scale-[0.99] active:border-primary/45 active:bg-primary/30 focus-visible:border-primary/45 focus-visible:bg-primary/20 focus-visible:outline-none"
               >
                 {item.label}
               </Link>
